@@ -6,16 +6,10 @@ module.exports = {
   description: "adds coins to an user, owner only.",
   execute: async(client, message, args, data, db) => {
 
-    let owners = [ "701731392228163587", "728602105018843227"]
-
-    //let data = await get(member, member.user)
-
+    let owners = [ "YOUR_USER_ID"]
     if (!owners.includes(message.author.id)) return
-
     let pay = Number(args[1])
-
-    if (!pay || isNaN(pay)) return message.channel.send(`**Command incorrect!** ||Noob Owner||\n**Try:** \`.bal <MentionAUser> <Coins>\``)
-
+    if (!pay || isNaN(pay)) return message.channel.send(`**Command incorrect!** \n**Try:** \`.bal <MentionAUser> <Coins>\``)
     let user = message.mentions.users.first()
     let logchannel = client.channels.cache.get("746035699303841922")
     let embed = new Discord.MessageEmbed()
